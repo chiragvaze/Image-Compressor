@@ -39,18 +39,26 @@ h1, h2, h3 {
 
 h1 {
     font-size: 2.5em;
-    border-bottom: 2px solid #3498db;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, #667eea, #764ba2) 1;
     padding-bottom: 10px;
 }
 
 h2 {
     font-size: 2em;
-    color: #34495e;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 h3 {
     font-size: 1.5em;
-    color: #7f8c8d;
+    color: #5a6c7d;
 }
 
 p {
@@ -71,18 +79,39 @@ a:hover {
 
 button, .btn {
     display: inline-block;
-    background: #3498db;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before, .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before, .btn:hover::before {
+    left: 100%;
 }
 
 button:hover, .btn:hover {
-    background: #2980b9;
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 input[type="text"],
@@ -134,6 +163,7 @@ li {
 .mb-20 {
     margin-bottom: 20px;
 }
+
 
 /* Responsive Design */
 @media (max-width: 600px) {
