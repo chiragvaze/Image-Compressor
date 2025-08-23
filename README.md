@@ -13,6 +13,12 @@ A lightweight, web-based image compression tool that allows users to compress mu
 - **No Server Uploads**: All processing happens client-side for privacy
 - **Download Options**: Individual or batch download of compressed images
 
+## 🌐 Live Demo
+
+👉 [Click here to try Image Compressor](https://chiragvaze.github.io/Image-Compressor/)
+
+---
+
 ## 🛠️ Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
@@ -190,10 +196,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/image-compressor/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/image-compressor/discussions)
-- **Email**: support@imagecompressor.com
+- **Issues**: [GitHub Issues](https://github.com/chiragvaze/image-compressor/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/chiragvaze/image-compressor/discussions)
+- **Email**: chiragvaze.dev@gmail.com
 
 ---
 
-**Made with ❤️ by [Your Name]**
+**Made with ❤️ by Chirag Vaze**
