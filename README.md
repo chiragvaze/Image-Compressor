@@ -49,7 +49,7 @@ Image-compressor/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/image-compressor.git
+   git clone https://github.com/chiragvaze/image-compressor.git
    cd image-compressor
    ```
 
