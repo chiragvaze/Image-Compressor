@@ -81,6 +81,19 @@ body {
     display: block;
     filter: drop-shadow(0 2px 8px rgba(123, 146, 248, 0.158));
 }
+/*
+.logo-img {
+  width: 48px;  adjust size
+  height: auto;
+}
+
+ Dark mode version 
+@media (prefers-color-scheme: dark) {
+  .logo-img {
+    content: url('logo-dark.svg');
+  }
+}
+*/
 
 h1 {
     font-size: 2.7em;
