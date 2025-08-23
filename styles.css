@@ -137,7 +137,7 @@ h1 {
     transform: scale(1.08);
 }
 
-/*.upload-text h2{
+.upload-text h2{
      font-size: 2.2rem;
   font-weight: bold;
   background: linear-gradient(90deg, #fd30f3, #695aee);
@@ -146,7 +146,7 @@ h1 {
   background-clip: text; 
     
     
-}*/
+}
 
 /*.upload-text h2{
     color: #fffdfe;
