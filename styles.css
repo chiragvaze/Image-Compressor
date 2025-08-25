@@ -117,7 +117,9 @@ h1 {
 
 .file-upload-area {
     margin-bottom: 30px;
-    box-shadow: 0 2px 16px rgba(102,126,234,0.08);
+    box-shadow: 0 2px 16px rgba(89, 111, 209, 0.08);
+    border-radius: 18px;
+    padding: 28px;
 }
 
 
