@@ -13,11 +13,11 @@
   - Added button icon rotation during hover states
 
 ## New Features to Implement
-- [ ] 1. Compression Quality and Format Options
-  - [ ] Add quality slider (0-100)
-  - [ ] Add format selector (JPEG, PNG, WebP)
-  - [ ] Update compression logic
-  - [ ] Store preferences in localStorage
+- [x] 1. Compression Quality and Format Options
+  - [x] Add quality slider (0-100)
+  - [x] Add format selector (JPEG, PNG, WebP)
+  - [x] Update compression logic
+  - [x] Store preferences in localStorage
 
 - [ ] 2. Batch Download as ZIP
   - [ ] Add "Download All" button
