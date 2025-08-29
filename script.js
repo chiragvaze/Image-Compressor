@@ -61,6 +61,8 @@ class ImageCompressor {
         this.selectedFiles.forEach((file, index) => {
             const fileItem = document.createElement('div');
             fileItem.className = 'file-item';
+            fileItem.style.opacity = '0';
+            fileItem.style.transform = 'translateY(20px)';
             
             const img = document.createElement('img');
             const reader = new FileReader();
@@ -82,6 +84,13 @@ class ImageCompressor {
             fileItem.appendChild(fileName);
             fileItem.appendChild(removeBtn);
             this.filePreview.appendChild(fileItem);
+
+            // Animate file item appearance
+            setTimeout(() => {
+                fileItem.style.transition = 'all 0.4s cubic-bezier(0.4, 2, 0.3, 1)';
+                fileItem.style.opacity = '1';
+                fileItem.style.transform = 'translateY(0)';
+            }, index * 100);
         });
     }
 
@@ -166,6 +175,8 @@ class ImageCompressor {
     displayOutput(originalFile, compressedFile) {
         const outputItem = document.createElement('div');
         outputItem.className = 'output-item';
+        outputItem.style.opacity = '0';
+        outputItem.style.transform = 'translateX(50px)';
 
         const originalSize = (originalFile.size / 1024 / 1024).toFixed(2);
         const compressedSize = (compressedFile.size / 1024 / 1024).toFixed(2);
@@ -195,6 +206,13 @@ class ImageCompressor {
         outputItem.appendChild(info);
         outputItem.appendChild(downloadBtn);
         this.output.appendChild(outputItem);
+
+        // Animate output item appearance
+        setTimeout(() => {
+            outputItem.style.transition = 'all 0.5s cubic-bezier(0.4, 2, 0.3, 1)';
+            outputItem.style.opacity = '1';
+            outputItem.style.transform = 'translateX(0)';
+        }, 100);
     }
 
     downloadFile(file) {

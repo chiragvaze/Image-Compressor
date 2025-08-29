@@ -290,11 +290,13 @@ h1 {
     position: relative;
     box-shadow: 0 2px 12px rgba(102,126,234,0.08);
     border: 1px solid rgba(255,255,255,0.22);
+    animation: fadeInUp 0.6s ease-out;
 }
 .file-item:hover {
     background: rgba(255,255,255,0.28);
     transform: translateY(-2px) scale(1.03);
     box-shadow: 0 4px 18px rgba(102,126,234,0.12);
+    animation: pulse 0.5s ease-in-out;
 }
 .file-item img {
     width: 100%;
@@ -360,6 +362,10 @@ h1 {
     margin-right: 8px;
     font-size: 1.1em;
     vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+.compress-btn:hover:not(:disabled) .btn-icon {
+    transform: rotate(15deg);
 }
 .compress-btn:hover:not(:disabled) {
     transform: translateY(-2px) scale(1.03);
@@ -409,11 +415,13 @@ h1 {
     transition: all 0.3s cubic-bezier(.4,2,.3,1);
     box-shadow: 0 2px 12px rgba(102,126,234,0.08);
     border: 1px solid rgba(255,255,255,0.22);
+    animation: slideInRight 0.6s ease-out;
 }
 .output-item:hover {
     background: rgba(255,255,255,0.28);
     box-shadow: 0 4px 18px rgba(102,126,234,0.12);
     transform: scale(1.03);
+    animation: pulse 0.5s ease-in-out;
 }
 .output-item img {
     width: 90px;
