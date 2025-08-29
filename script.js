@@ -17,6 +17,7 @@ class ImageCompressor {
         this.qualitySlider = document.getElementById('qualitySlider');
         this.qualityValue = document.getElementById('qualityValue');
         this.formatSelect = document.getElementById('formatSelect');
+        this.downloadAllButton = document.getElementById('downloadAllButton');
     }
 
     loadSettings() {
@@ -54,6 +55,9 @@ class ImageCompressor {
 
         // Compress button
         this.compressButton.addEventListener('click', () => this.compressImages());
+
+        // Download All button
+        this.downloadAllButton.addEventListener('click', () => this.downloadAllCompressed());
 
         // Quality slider change
         this.qualitySlider.addEventListener('input', () => {
@@ -136,10 +140,13 @@ class ImageCompressor {
 
         this.showLoading(true);
 
+        this.compressedFiles = [];
+
         for (let i = 0; i < this.selectedFiles.length; i++) {
             const file = this.selectedFiles[i];
             try {
                 const compressedFile = await this.compressImage(file);
+                this.compressedFiles.push(compressedFile);
                 this.displayOutput(file, compressedFile);
             } catch (error) {
                 console.error('Error compressing image:', error);
@@ -265,15 +272,43 @@ class ImageCompressor {
             btnText.style.display = 'none';
             btnLoader.style.display = 'flex';
             this.compressButton.disabled = true;
+            this.downloadAllButton.disabled = true;
         } else {
             btnText.style.display = 'block';
             btnLoader.style.display = 'none';
             this.compressButton.disabled = false;
+            this.downloadAllButton.disabled = false;
         }
+    }
+
+    async downloadAllCompressed() {
+        if (!this.compressedFiles || this.compressedFiles.length === 0) {
+            alert('No compressed files available. Please compress images first.');
+            return;
+        }
+
+        const zip = new JSZip();
+        const folder = zip.folder('compressed_images');
+
+        for (const file of this.compressedFiles) {
+            const arrayBuffer = await file.arrayBuffer();
+            folder.file(file.name, arrayBuffer);
+        }
+
+        const content = await zip.generateAsync({ type: 'blob' });
+
+        const url = URL.createObjectURL(content);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'compressed_images.zip';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
     }
 }
 
-// Initialize the compressor when DOM is loaded
+// Initialize the ImageCompressor when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     new ImageCompressor();
 });

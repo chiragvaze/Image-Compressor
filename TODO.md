@@ -19,10 +19,10 @@
   - [x] Update compression logic
   - [x] Store preferences in localStorage
 
-- [ ] 2. Batch Download as ZIP
-  - [ ] Add "Download All" button
-  - [ ] Implement JSZip integration
-  - [ ] Handle multiple file downloads
+- [x] 2. Batch Download as ZIP
+  - [x] Add "Download All" button
+  - [x] Implement JSZip integration
+  - [x] Handle multiple file downloads
   - [ ] Show progress during zip creation
 
 - [ ] 3. Compression Progress and Timing
