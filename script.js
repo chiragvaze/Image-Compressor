@@ -3,6 +3,7 @@ class ImageCompressor {
     constructor() {
         this.selectedFiles = [];
         this.initializeElements();
+        this.loadSettings();
         this.bindEvents();
     }
 
@@ -13,6 +14,21 @@ class ImageCompressor {
         this.filePreview = document.getElementById('filePreview');
         this.compressButton = document.getElementById('compressButton');
         this.output = document.getElementById('output');
+        this.qualitySlider = document.getElementById('qualitySlider');
+        this.qualityValue = document.getElementById('qualityValue');
+        this.formatSelect = document.getElementById('formatSelect');
+    }
+
+    loadSettings() {
+        const savedQuality = localStorage.getItem('compressionQuality');
+        const savedFormat = localStorage.getItem('compressionFormat');
+        if (savedQuality !== null) {
+            this.qualitySlider.value = savedQuality;
+            this.qualityValue.textContent = savedQuality;
+        }
+        if (savedFormat !== null) {
+            this.formatSelect.value = savedFormat;
+        }
     }
 
     bindEvents() {
@@ -38,6 +54,17 @@ class ImageCompressor {
 
         // Compress button
         this.compressButton.addEventListener('click', () => this.compressImages());
+
+        // Quality slider change
+        this.qualitySlider.addEventListener('input', () => {
+            this.qualityValue.textContent = this.qualitySlider.value;
+            localStorage.setItem('compressionQuality', this.qualitySlider.value);
+        });
+
+        // Format select change
+        this.formatSelect.addEventListener('change', () => {
+            localStorage.setItem('compressionFormat', this.formatSelect.value);
+        });
     }
 
     handleFiles(files) {
@@ -153,14 +180,18 @@ class ImageCompressor {
                     // Draw image
                     ctx.drawImage(img, 0, 0, width, height);
 
+                    // Get quality and format from settings
+                    const quality = this.qualitySlider.value / 100;
+                    const format = this.formatSelect.value;
+
                     // Convert to blob
                     canvas.toBlob((blob) => {
                         const compressedFile = new File([blob], `compressed_${file.name}`, {
-                            type: 'image/jpeg',
+                            type: format,
                             lastModified: Date.now()
                         });
                         resolve(compressedFile);
-                    }, 'image/jpeg', 0.8);
+                    }, format, quality);
                 };
 
                 img.onerror = reject;

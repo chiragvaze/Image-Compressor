@@ -88,6 +88,26 @@
                 <!-- Selected files will be displayed here -->
             </div>
         </div>
+
+        <!-- Compression Settings -->
+        <div class="compression-settings glass" id="compressionSettings">
+            <h3>Compression Settings</h3>
+            <div class="settings-row">
+                <div class="setting-group">
+                    <label for="qualitySlider">Quality: <span id="qualityValue">80</span>%</label>
+                    <input type="range" id="qualitySlider" min="0" max="100" value="80">
+                </div>
+                <div class="setting-group">
+                    <label for="formatSelect">Output Format:</label>
+                    <select id="formatSelect">
+                        <option value="image/jpeg">JPEG</option>
+                        <option value="image/png">PNG</option>
+                        <option value="image/webp">WebP</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <button id="compressButton" class="compress-btn">
             <span class="btn-text"><span class="btn-icon">🔄</span> Compress Images</span>
             <span class="btn-loader" style="display: none;">
