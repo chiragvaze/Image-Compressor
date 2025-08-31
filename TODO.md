@@ -1,4 +1,4 @@
 # TODO for Removing Footer Enhancements
 
-- [ ] Remove footer-nav from index.html
-- [ ] Remove footer-nav and footer-link styles from styles.css
+- [x] Remove footer-nav from index.html
+- [x] Remove footer-nav and footer-link styles from styles.css
