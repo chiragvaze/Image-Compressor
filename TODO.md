@@ -1,5 +1,4 @@
+# TODO for Removing Footer Enhancements
 
-# TODO for Enhancing Footer
-
-- [x] Add links to new features in footer
-- [x] Update footer styles if needed
+- [ ] Remove footer-nav from index.html
+- [ ] Remove footer-nav and footer-link styles from styles.css

@@ -618,26 +618,6 @@ h1 {
     color: #f5576c;
 }
 
-.footer-nav {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.footer-link {
-    color: #9302a3;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.footer-link:hover {
-    color: #f5576c;
-    text-decoration: underline;
-}
-
 /* Top Bar for More Features */
 .top-bar {
     display: flex;
