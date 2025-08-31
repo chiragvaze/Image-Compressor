@@ -617,3 +617,37 @@ h1 {
 .footer a:hover {
     color: #f5576c;
 }
+
+/* Top Bar for More Features */
+.top-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 12px 20px;
+    border-radius: 18px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(102,126,234,0.12);
+    font-weight: 600;
+    color: #222;
+    user-select: none;
+}
+
+.top-bar .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+    font-size: 1.1em;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.top-bar .feature-item:hover {
+    color: #764ba2;
+}
+
+.top-bar .feature-icon {
+    font-size: 1.4em;
+    display: inline-block;
+    line-height: 1;
+}
